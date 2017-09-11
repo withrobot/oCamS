@@ -11,7 +11,7 @@
 *	Cost Effective: Very affordable price among the cameras of similar grade
 
 ## Board Detail
-![ScreenShot](../../images/oCamS-1CGN-U_Layout.PNG)
+![ScreenShot](images/oCamS-1CGN-U_Layout.PNG)
 
 
 ## Specifications
@@ -32,7 +32,7 @@ Type | Description |
 **Weight** | 30 gram approx. (including lens) | 
 **Size** | 146mm x 26mm (PCB) | 
 
-![ScreenShot](../../images/oCamS-1CGN-U_poster.jpg)
+![ScreenShot](images/oCamS-1CGN-U_poster.jpg)
 
 ## Tutorials and Applications
 * [oCamS-1CGN-U Tutorial - Update Firmware](https://github.com/withrobot/oCam/blob/master/Software/oCamS_ROS_Package/README.md#update-firmware)
@@ -46,4 +46,4 @@ Type | Description |
 * [oCamS_ROS_Package](Software/oCamS_ROS_Package)
 
 ## Firmware
-* [oCamS-1CGN-U_R1707_170719.img](https://github.com/withrobot/oCam/blob/master/Firmware/oCamS-1CGN-U_R1707_170719.img)
+* [oCamS-1CGN-U_R1707_170719.img](https://github.com/withrobot/oCamS/blob/master/Firmware/oCamS-1CGN-U_R1707_170719.img)
