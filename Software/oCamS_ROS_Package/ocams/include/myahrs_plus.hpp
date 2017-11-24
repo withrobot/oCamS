@@ -1449,9 +1449,9 @@ namespace WithrobotIMU {
             ascii_handler_rsp_map[std::string("~baudrate")]    = &iMyAhrsPlus::ascii_rsp_baudrate;
             ascii_handler_rsp_map[std::string("~save")]        = &iMyAhrsPlus::ascii_rsp_save;
             //oCmaS_BNO055
-//            ascii_handler_rsp_map[std::string("~AMGEUL")]        = &iMyAhrsPlus::ascii_rsp_amgeul;
-//            ascii_handler_rsp_map[std::string("~AMGQUA")]        = &iMyAhrsPlus::ascii_rsp_amgqua;
-//            ascii_handler_rsp_map[std::string("~LMGEUL")]        = &iMyAhrsPlus::ascii_rsp_lmgeul;
+            ascii_handler_rsp_map[std::string("~AMGEUL")]        = &iMyAhrsPlus::ascii_rsp_amgeul;
+            ascii_handler_rsp_map[std::string("~AMGQUA")]        = &iMyAhrsPlus::ascii_rsp_amgqua;
+            ascii_handler_rsp_map[std::string("~LMGEUL")]        = &iMyAhrsPlus::ascii_rsp_lmgeul;
             ascii_handler_rsp_map[std::string("~LMGQUA")]        = &iMyAhrsPlus::ascii_rsp_lmgqua;
 
             // data message (ascii)
@@ -1462,9 +1462,9 @@ namespace WithrobotIMU {
             ascii_handler_data_map[std::string("$RIIMU")]      = &iMyAhrsPlus::ascii_update_riimu;
             ascii_handler_data_map[std::string("$IMU")]        = &iMyAhrsPlus::ascii_update_imu;
             //oCamS_BNO055
-//            ascii_handler_data_map[std::string("$AMGEUL")]        = &iMyAhrsPlus::ascii_update_amgeul;
-//            ascii_handler_data_map[std::string("$AMGQUA")]        = &iMyAhrsPlus::ascii_update_amgqua;
-//            ascii_handler_data_map[std::string("$LMGEUL")]        = &iMyAhrsPlus::ascii_update_lmgeul;
+            ascii_handler_data_map[std::string("$AMGEUL")]        = &iMyAhrsPlus::ascii_update_amgeul;
+            ascii_handler_data_map[std::string("$AMGQUA")]        = &iMyAhrsPlus::ascii_update_amgqua;
+            ascii_handler_data_map[std::string("$LMGEUL")]        = &iMyAhrsPlus::ascii_update_lmgeul;
             ascii_handler_data_map[std::string("$LMGQUA")]        = &iMyAhrsPlus::ascii_update_lmgqua;
 
 
@@ -2235,15 +2235,33 @@ namespace WithrobotIMU {
         }
 
         // oCamS_BNO055
-        bool ascii_rsp_lmgqua(std::map<std::string, std::string>& attributes) {
+        bool ascii_rsp_amgeul(std::map<std::string, std::string>& attributes) {
             dbg_show_all_attributes(attributes);
-
-            // TODO:???
-            set_attribute("ascii_format", attributes["lmgqua"]);
+            set_attribute("ascii_format", attributes["amgeul"]);
 
             return true;
         }
 
+        bool ascii_rsp_amgqua(std::map<std::string, std::string>& attributes) {
+            dbg_show_all_attributes(attributes);
+            set_attribute("ascii_format", attributes["amgqua"]);
+
+            return true;
+        }
+
+        bool ascii_rsp_lmgeul(std::map<std::string, std::string>& attributes) {
+            dbg_show_all_attributes(attributes);
+            set_attribute("ascii_format", attributes["lmgeul"]);
+
+            return true;
+        }
+
+        bool ascii_rsp_lmgqua(std::map<std::string, std::string>& attributes) {
+            dbg_show_all_attributes(attributes);
+            set_attribute("ascii_format", attributes["lmgqua"]);
+
+            return true;
+        }
         /*
          *  ascii data message handlers
          */
@@ -2387,6 +2405,98 @@ namespace WithrobotIMU {
             sensor_data.update_imu(imu);
 
             DBG_PRINTF(debug, "### %s(%s)\n", __FUNCTION__, StringUtil::join(str_imu, ", ").c_str());
+
+            return true;
+        }
+
+        // $AMGEUL,66449,-301,142,920,628,8,-400,-4,-11,-4,-281,-140,0
+        // $LMGQUA,1706673,-97,944,253,-819,-1316,273,0,0,0,5575,-94,-1174
+        bool ascii_update_amgeul(std::vector<std::string>& tokens) {
+            static const int DATA_NUM_EUL = 3;
+            static const int DATA_NUM_IMU = 9;
+            if(tokens.size() != DATA_NUM_EUL + DATA_NUM_IMU + 2 ) {
+                DBG_PRINTF(debug, "tokens.size() = %d\n",tokens.size());
+                return false;
+            }
+
+            sensor_data.time_stamp = atoi(tokens[1].c_str());
+
+            std::vector<std::string> str_imu(DATA_NUM_IMU, "");
+            std::copy_n(tokens.begin() + 2, DATA_NUM_IMU, str_imu.begin());
+
+            ImuData<float> imu;
+            imu.set(str_imu);
+            sensor_data.update_imu(imu);
+
+            std::vector<std::string> str_eul(DATA_NUM_EUL, "");
+            std::copy_n(tokens.begin() + 2 + DATA_NUM_IMU, DATA_NUM_EUL, str_eul.begin());
+
+            EulerAngle eul;
+            eul.set(str_eul);
+            sensor_data.update_attitude(eul);
+
+            DBG_PRINTF(debug, "### %d(euler=(%s), imu=(%s))\n", sensor_data.time_stamp, StringUtil::join(str_eul, ", ").c_str(), StringUtil::join(str_imu, ", ").c_str());
+
+
+            return true;
+        }
+
+        bool ascii_update_amgqua(std::vector<std::string>& tokens) {
+            static const int DATA_NUM_QUAT = 4;
+            static const int DATA_NUM_IMU = 9;
+            if(tokens.size() != DATA_NUM_QUAT + DATA_NUM_IMU + 2 ) {
+                DBG_PRINTF(debug, "tokens.size() = %d\n",tokens.size());
+                return false;
+            }
+
+            sensor_data.time_stamp = atoi(tokens[1].c_str());
+
+            std::vector<std::string> str_imu(DATA_NUM_IMU, "");
+            std::copy_n(tokens.begin() + 2, DATA_NUM_IMU, str_imu.begin());
+
+            ImuData<float> imu;
+            imu.set(str_imu);
+            sensor_data.update_imu(imu);
+
+            std::vector<std::string> str_quat(DATA_NUM_QUAT, "");
+            std::copy_n(tokens.begin() + 2 + DATA_NUM_IMU, DATA_NUM_QUAT, str_quat.begin());
+
+            Quaternion q;
+            q.set(str_quat);
+            sensor_data.update_attitude(q);
+
+            DBG_PRINTF(debug, "### %d(quaternion=(%s), imu=(%s))\n", sensor_data.time_stamp, StringUtil::join(str_quat, ", ").c_str(), StringUtil::join(str_imu, ", ").c_str());
+
+
+            return true;
+        }
+
+        bool ascii_update_lmgeul(std::vector<std::string>& tokens) {
+            static const int DATA_NUM_EUL = 3;
+            static const int DATA_NUM_IMU = 9;
+            if(tokens.size() != DATA_NUM_EUL + DATA_NUM_IMU + 2 ) {
+                DBG_PRINTF(debug, "tokens.size() = %d\n",tokens.size());
+                return false;
+            }
+
+            sensor_data.time_stamp = atoi(tokens[1].c_str());
+
+            std::vector<std::string> str_imu(DATA_NUM_IMU, "");
+            std::copy_n(tokens.begin() + 2, DATA_NUM_IMU, str_imu.begin());
+
+            ImuData<float> imu;
+            imu.set(str_imu);
+            sensor_data.update_imu(imu);
+
+            std::vector<std::string> str_eul(DATA_NUM_EUL, "");
+            std::copy_n(tokens.begin() + 2 + DATA_NUM_IMU, DATA_NUM_EUL, str_eul.begin());
+
+            EulerAngle eul;
+            eul.set(str_eul);
+            sensor_data.update_attitude(eul);
+
+            DBG_PRINTF(debug, "### %d(euler=(%s), imu=(%s))\n", sensor_data.time_stamp, StringUtil::join(str_eul, ", ").c_str(), StringUtil::join(str_imu, ", ").c_str());
+
 
             return true;
         }

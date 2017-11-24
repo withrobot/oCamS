@@ -392,7 +392,7 @@ public:
   ~MyAhrsDriverForROS()
   {}
 
-  bool initialize()
+  bool initialize(std::string mode="")
   {
     bool ok = false;
 
@@ -400,8 +400,9 @@ public:
     {
         if(start() == false) break;
 
-        /* Linear Acc IMU + Quaternion mode */
-        if(cmd_data_format("LMGQUA") == false) break;
+        /* IMU mode */
+	if(cmd_data_format(mode.c_str()) == false) break;
+	printf("IMU initialized: %s\r\n", mode.c_str());
         ok = true;
     } while(0);
 
@@ -510,14 +511,23 @@ int main (int argc, char **argv)
 
     std::string port = std::string("/dev/ttyACM0");
     int baud_rate    = 115200;
+    std::string imu_mode = std::string("AMGQUA");
 
     ros::param::get("~port", port);
+    ros::param::get("~imu_mode", imu_mode);
     ros::param::get("~baud_rate", baud_rate);
 
     MyAhrsDriverForROS sensor(port, baud_rate);
-    if(sensor.initialize() == false)
+    if(sensor.initialize(imu_mode) == false)
     {
-      ROS_ERROR("%s\n", "Initialize() returns false, please check your devices.");
+      ROS_ERROR("%s\n", "IMU initialize false!\r\n oCamS-1CGN-U sends IMU data through Virtual COM port.\r\n \
+So, user needs to write following rules into udev rule file like below.\r\n \
+-------------------------------------------------------------------------------\r\n \
+ $ sudo vi /etc/udev/rules.d/99-ttyacms.rules\r\n \
+ ATTRS{idVendor}==\"04b4\" ATTRS{idProduct}==\"00f9\", MODE=\"0666\", ENV{ID_MM_DEVICE_IGNORE}=\"1\"\r\n \
+ ATTRS{idVendor}==\"04b4\" ATTRS{idProduct}==\"00f8\", MODE=\"0666\", ENV{ID_MM_DEVICE_IGNORE}=\"1\"\r\n \
+ $ sudo udevadm control -R\r\n \
+-------------------------------------------------------------------------------\r\n");
     }
 
     oCamStereoROS ocams_ros;
