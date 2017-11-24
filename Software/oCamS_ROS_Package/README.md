@@ -6,7 +6,6 @@ oCamS ROS control program
 * Added IMU mode (AMGQUA, LMGQUA)
 * Camera default setting changed
 
-## Release Note
 ***2017.07.19***
 * Support for the oCamS-1CGN-U_R1707
 * Auto-Exposure
