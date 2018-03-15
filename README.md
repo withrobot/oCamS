@@ -20,7 +20,7 @@ Type | Description |
 **Sensor** | OnSemi AR0134 CMOS image sensor (1/3 inch) |
 **Interface** | USB 3.0 Super-Speed |
 **Lens** | Changeable standard M12 lens | 
-**Supported OS** | Windows 7/8/10, Linux, Plug-and Play by UVC(USB Video Class) protocol | 
+**Supported OS** | Linux, Plug-and Play by UVC(USB Video Class) protocol | 
 **Power** | USB Bus Power | 
 **Operation Temperature** | 0¡ÆC ~ + 70¡ÆC |
 **Rating** | DC 5V/240mA |
