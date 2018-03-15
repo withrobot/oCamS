@@ -20,7 +20,7 @@ Type | Description |
 **센서** | OnSemi AR0134 CMOS 이미지 센서(1/3인치) |
 **인터페이스** | USB 3.0 Super-Speed |
 **렌즈** | 교환 가능한 표준 M12 렌즈 | 
-**지원 OS** | Windows 7/8/10, Linux, Plug-and Play by UVC(USB Video Class) protocol | 
+**지원 OS** | Linux, Plug-and Play by UVC(USB Video Class) protocol | 
 **전원 공급** | USB Bus Power | 
 **동작 온도** | 0°C ~ + 70°C |
 **소모 전력** | DC 5V/240mA |
