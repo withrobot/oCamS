@@ -1,8 +1,10 @@
 # Release Note
-## oCamS-1CGN-U_R1803(Mar 2018)
+## oCamS-1CGN-U_R1811(Nov. 2018)
+
+## oCamS-1CGN-U_R1803(Mar. 2018)
 Stable version.</br>
 
-## oCamS-1CGN-U_R1707(Jul 2017)
+## oCamS-1CGN-U_R1707(Jul. 2017)
 oCamS firmware(oCamS-1CGN-U_R1707_170719.img) supports resolutions and frame rates as follows.</br>
 ### USB 3.0
 **Bayer GRBG format**</br>
@@ -19,7 +21,7 @@ oCamS firmware(oCamS-1CGN-U_R1707_170719.img) supports resolutions and frame rat
 - IMU data output
 - Auto-Exposure
 
-## oCamS-1CGN-U_R1705(May 2017)
+## oCamS-1CGN-U_R1705(May. 2017)
 oCam firmware(oCamS-1CGN-U_R1705_170523.img) supports resolutions and frame rates as follows
 ### USB 3.0
 **Bayer GRBG format**</br>
