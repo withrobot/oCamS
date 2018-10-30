@@ -1,20 +1,20 @@
 # Release Note
 ## oCamS-1CGN-U_R1811(Nov. 2018)
-oCam firmware(oCamS-1CGN-U_R1811.img) supports resolutions and frame rates as follows
+oCam firmware(oCamS-1CGN-U_R1811.img) supports resolutions and frame rates as follows.</br>
 
-USB 3.0
-Bayer GRBG format
-1280 (H) x 960 (V) pixels 45, 30, 25, 20, 15, 10 fps 
-1280 (H) x 720 (V) pixels 60, 50, 45, 30, 25, 20, 15, 10 fps
-640 (H) x 480 (V) pixels 45, 30, 25, 20, 15, 10 fps (binning)
-640 (H) x 360 (V) pixels 60, 50, 45, 30, 25, 20, 15, 10 fps (binning)
-320 (H) x 240 (V) pixels 60, 50, 45, 30, 25, 20, 15, 10 fps (cropping)
+### USB 3.0
+**Bayer GRBG format**</br>
+1280 (H) x 960 (V) pixels 45, 30, 25, 20, 15, 10 fps </br>
+1280 (H) x 720 (V) pixels 60, 50, 45, 30, 25, 20, 15, 10 fps</br>
+640 (H) x 480 (V) pixels 45, 30, 25, 20, 15, 10 fps (binning)</br>
+640 (H) x 360 (V) pixels 60, 50, 45, 30, 25, 20, 15, 10 fps (binning)</br>
+320 (H) x 240 (V) pixels 60, 50, 45, 30, 25, 20, 15, 10 fps (cropping)</br>
 
-USB 2.0
-Bayer GRBG format
-640 (H) x 480 (V) pixels 45, 30, 25, 20, 15, 10 fps (binning)
-640 (H) x 360 (V) pixels 60, 50, 45, 30, 25, 20, 15, 10 fps (binning)
-320 (H) x 240 (V) pixels 60, 50, 45, 30, 25, 20, 15, 10 fps (cropping)
+### USB 2.0
+**Bayer GRBG format**</br>
+640 (H) x 480 (V) pixels 45, 30, 25, 20, 15, 10 fps (binning)</br>
+640 (H) x 360 (V) pixels 60, 50, 45, 30, 25, 20, 15, 10 fps (binning)</br>
+320 (H) x 240 (V) pixels 60, 50, 45, 30, 25, 20, 15, 10 fps (cropping)</br>
 
 ## oCamS-1CGN-U_R1803(Mar. 2018)
 Stable version.</br>
