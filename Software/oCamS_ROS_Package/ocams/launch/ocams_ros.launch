@@ -4,7 +4,7 @@
   <arg name="optical_rotate" value="0 0.06 0 0 0 0 1" />
 
   <node pkg="ocams" type="ocams" name="ocams" output="screen">
-    <param name="resolution"    value="2"/> <!-- 0: 1280x960, 1: 1280x720, 2: 640x480, 3: 640x360 -->
+    <param name="resolution"    value="2"/> <!-- 0: 1280x960, 1: 1280x720, 2: 640x480, 3: 640x360, 4: 320x240 -->
     <param name="frame_rate"    value="30"/>
     <param name="exposure"      value="100"/>
     <param name="gain"          value="100"/>

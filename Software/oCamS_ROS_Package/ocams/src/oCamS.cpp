@@ -46,6 +46,7 @@ public:
         if (resolution == 1) { width_ = 1280; height_ = 720;}
         if (resolution == 2) { width_ = 640; height_  = 480;}
         if (resolution == 3) { width_ = 640; height_  = 360;}
+        if (resolution == 4) { width_ = 320; height_  = 240;}
 
         camera->set_format(width_, height_, Withrobot::fourcc_to_pixformat('Y','U','Y','V'), 1, (unsigned int)frame_rate);
 
