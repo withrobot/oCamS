@@ -46,4 +46,4 @@ Type | Description |
 * [oCamS_ROS_Package](Software/oCamS_ROS_Package)
 
 ## Firmware
-* [oCamS-1CGN-U_R1707_170719.img](https://github.com/withrobot/oCamS/blob/master/Firmware/oCamS-1CGN-U_R1707_170719.img)
+* [oCamS-1CGN-U-R1811.img](https://github.com/withrobot/oCamS/blob/master/Firmware/oCamS-1CGN-U-R1811.img)
