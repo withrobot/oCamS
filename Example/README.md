@@ -1,1 +1,1 @@
-# People conter example
+# People counter example
