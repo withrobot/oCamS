@@ -12,7 +12,7 @@
 #include <tf/transform_broadcaster.h>
 #include <tf/transform_datatypes.h>
 #include <dynamic_reconfigure/server.h>
-#include <ocams_pc/camConfig.h>
+#include <People_counter/camConfig.h>
 #include <iostream>
 #include <fstream>
 #include <time.h>
@@ -585,8 +585,8 @@ private:
 
     void device_poll() {
         //Reconfigure confidence
-        dynamic_reconfigure::Server<ocams_pc::camConfig> server;
-        dynamic_reconfigure::Server<ocams_pc::camConfig>::CallbackType f;
+        dynamic_reconfigure::Server<People_counter::camConfig> server;
+        dynamic_reconfigure::Server<People_counter::camConfig>::CallbackType f;
         f = boost::bind(&oCamStereoROS::callback, this ,_1, _2);
         server.setCallback(f);
 
@@ -611,11 +611,11 @@ private:
         camera_info_manager::CameraInfoManager info_manager(nh);
 
         info_manager.setCameraName("left");
-        info_manager.loadCameraInfo( "package://ocams_pc/config/left.yaml");
+        info_manager.loadCameraInfo( "package://People_counter/config/left.yaml");
         left_info = info_manager.getCameraInfo();
 
         info_manager.setCameraName("right");
-        info_manager.loadCameraInfo( "package://ocams_pc/config/right.yaml");
+        info_manager.loadCameraInfo( "package://People_counter/config/right.yaml");
         right_info = info_manager.getCameraInfo();
 
         left_info.header.frame_id = left_frame_id_;
@@ -950,7 +950,7 @@ private:
         ocams->uvc_control(exposure_ ,  gain_ , wb_blue_ , wb_red_ , autoexposure_);
     }
 
-    void callback(ocams_pc::camConfig &config, uint32_t level) {
+    void callback(People_counter::camConfig &config, uint32_t level) {
         //        ROS_INFO("exposure:%d, gain:%d, blue:%d, red:%d, ae:%d", config.exposure, config.gain, config.wb_blue, config.wb_red, config.auto_exposure);
         ocams->uvc_control(config.exposure, config.gain, config.wb_blue, config.wb_red, config.auto_exposure);
 
@@ -1067,7 +1067,7 @@ public:
 
 int main (int argc, char **argv)
 {
-    ros::init(argc, argv, "ocams_pc");
+    ros::init(argc, argv, "People_counter");
 
     ros::NodeHandle nh;
     ros::NodeHandle priv_nh("~");
