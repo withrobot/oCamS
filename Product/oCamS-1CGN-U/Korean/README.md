@@ -17,7 +17,7 @@
 ## 사양
 Type | Description |
 ------|------|
-**센서** | OnSemi AR0134 CMOS 이미지 센서(1/3인치) |
+**센서** | OnSemi AR0135 CMOS 이미지 센서(1/3인치) |
 **인터페이스** | USB 3.0 Super-Speed |
 **렌즈** | 교환 가능한 표준 M12 렌즈 | 
 **지원 OS** | Linux, Plug-and Play by UVC(USB Video Class) protocol | 
