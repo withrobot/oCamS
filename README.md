@@ -17,7 +17,7 @@
 ## Specifications
 Type | Description |
 ------|------|
-**Sensor** | OnSemi AR0134 CMOS image sensor (1/3 inch) |
+**Sensor** | OnSemi AR0135 CMOS image sensor (1/3 inch) |
 **Interface** | USB 3.0 Super-Speed |
 **Lens** | Changeable standard M12 lens | 
 **Supported OS** | Linux, Plug-and Play by UVC(USB Video Class) protocol | 
