@@ -17,7 +17,7 @@
 ## Specifications
 Type | Description |
 ------|------|
-**Sensor** | OnSemi AR0134 CMOS image sensor (1/3 inch) |
+**Sensor** | OnSemi AR0135 CMOS image sensor (1/3 inch) |
 **Interface** | USB 3.0 Super-Speed |
 **Lens** | Changeable standard M12 lens | 
 **Supported OS** | Windows 7/8/10, Linux, Plug-and Play by UVC(USB Video Class) protocol | 
@@ -37,9 +37,9 @@ Type | Description |
 ## Tutorials and Applications
 * [oCamS-1CGN-U Tutorial - Update Firmware](https://github.com/withrobot/oCam/blob/master/Software/oCamS_ROS_Package/README.md#update-firmware)
 * [oCamS-1CGN-U Tutorial - ROS & oCam ROS Package installation](https://github.com/withrobot/oCam/blob/master/Software/oCamS_ROS_Package/README.md#ros--ocam-ros-package-installation)
-* [oCamS-1CGN-U Tutorial - Calibration](https://youtu.be/veahVVHA8H4)
-* [Simultaneous Localization and Mapping(SLAM)](https://youtu.be/Zq3pChn_P1Y)
-* [Obstacle Detection](https://youtu.be/Y5KV6uDU7QY)
+* [oCamS-1CGN-U Tutorial - Calibration](https://youtu.be/DPENw80cVmI)
+* [Simultaneous Localization and Mapping(SLAM)](https://youtu.be/czH7wOtqR20)
+* [Obstacle Detection](https://youtu.be/OQj6jvO9MM4)
 
 
 ## Softwares
