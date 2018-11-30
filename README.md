@@ -22,7 +22,7 @@ Type | Description |
 **Lens** | Changeable standard M12 lens | 
 **Supported OS** | Linux, Plug-and Play by UVC(USB Video Class) protocol | 
 **Power** | USB Bus Power | 
-**Operation Temperature** | 0¡ÆC ~ + 70¡ÆC |
+**Operation Temperature** | 0℃ ~ + 70℃ |
 **Rating** | DC 5V/240mA |
 **Shutter** | Electric Global Shutter |
 **Field Of View(FOV)** | - 65 degrees at full resolution of 1280(H) x 960(V)</br> - FOV for the following resolutions are reduced from the full resolution image due to cropping: 1280(H) x 720(V)</br> - FOV for the following resolutions is maintained due to binning: 640(H) x 480(V) |
