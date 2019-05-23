@@ -60,7 +60,7 @@ $ sudo udevadm control –reload-rules
 ```
 And, run...
 ```
-$ roslaunch ocams ocams_ros.launch
+$ roslaunch ocams_1cgn ocams_ros.launch
 ```
 
 ## Update Firmware
