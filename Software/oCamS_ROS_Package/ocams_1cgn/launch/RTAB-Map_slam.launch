@@ -10,7 +10,7 @@
   <arg name="localization"            default="false"/>
 
   <!-- Run the ROS package stereo_image_proc for image rectification -->
-    <include file="$(find ocams)/launch/ocams_ros.launch" />
+    <include file="$(find ocams_1cgn)/launch/ocams_ros.launch" />
 
   <group ns="/stereo" >
     <node pkg="nodelet" type="nodelet" name="stereo_nodelet"  args="manager"/>
@@ -97,6 +97,6 @@
   </group>
 
   <!-- Visualisation RVIZ --> 
-  <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz" args="-d $(find ocams)/config/rviz/demo_slam.rviz"/>
+  <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz" args="-d $(find ocams_1cgn)/config/rviz/demo_slam.rviz"/>
 
 </launch>

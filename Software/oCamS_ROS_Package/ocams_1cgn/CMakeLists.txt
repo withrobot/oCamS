@@ -1,22 +1,20 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(ocams)
+project(ocams_1cgn)
 
 add_definitions(-std=c++11)
 #set(CMAKE_CXX_FLAGS "-std=c++11 -O2 ${CMAKE_CXX_FLAGS}")
 
-find_package(catkin REQUIRED COMPONENTS
-  roscpp
-  std_msgs
-  cv_bridge
-  image_transport
-  camera_info_manager
-  sensor_msgs
-  tf
-  dynamic_reconfigure
+find_package(catkin REQUIRED
+  COMPONENTS
+    roscpp
+    std_msgs
+    image_transport
+    image_geometry
+    camera_info_manager
+    sensor_msgs
+    tf
+    dynamic_reconfigure
 )
-
-find_package(Boost REQUIRED COMPONENTS system)
-find_package(OpenCV REQUIRED)
 
 generate_dynamic_reconfigure_options(
   cfg/cam.cfg
@@ -27,22 +25,26 @@ catkin_package(
   CATKIN_DEPENDS
     roscpp
     std_msgs
-    cv_bridge
     image_transport
+    image_geometry
     camera_info_manager
     sensor_msgs
     tf
     dynamic_reconfigure
 )
 
+find_package(Boost REQUIRED COMPONENTS system)
+find_package(OpenCV REQUIRED)
+
 include_directories(
     include
     ${catkin_INCLUDE_DIRS}
+    ${OpenCV_INCLUDE_DIRS}
 )
 
-add_executable(ocams src/oCamS.cpp src/withrobot_camera.cpp src/withrobot_utility.cpp)
-target_link_libraries(ocams ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${OpenCV_LIBS} -lv4l2 -ludev)
-add_dependencies(ocams ${PROJECT_NAME}_gencfg)
+add_executable(ocams_1cgn src/oCamS.cpp src/withrobot_camera.cpp src/withrobot_utility.cpp)
+target_link_libraries(ocams_1cgn ${catkin_LIBRARIES} ${Boost_LIBRARIES} ${OpenCV_LIBS} -lv4l2 -ludev)
+add_dependencies(ocams_1cgn ${PROJECT_NAME}_gencfg)
 
 ###############################################################################
 
