@@ -43,7 +43,7 @@ http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment
   * using SVN checkout
   ```
   $ cd YOUR_WORKING_DIRECTORY (ex. $ cd ~/catkin_ws/src/)
-  $ svn export https://github.com/withrobot/oCamS/trunk/Software/oCamS_ROS_Package/ocams
+  $ svn export https://github.com/withrobot/oCamS/trunk/Software/oCamS_ROS_Package/ocams_1cgn
   ```
   ##### 2.3 Build
   ```
