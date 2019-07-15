@@ -49,7 +49,7 @@ private:
 public:
     int width_;
     int height_;
-
+ 
     StereoCamera(int resolution, double frame_rate): camera(NULL)
     {
         enum_dev_list();
