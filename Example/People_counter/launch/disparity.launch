@@ -1,0 +1,27 @@
+<!-- ... -->
+<launch>
+
+  <!-- Choose algorithm -->
+  <arg name="rqt_reconfigure" default="true" />
+
+  <include file="$(find ocams_new)/launch/ocams_ros.launch" />
+
+  <group ns="/stereo" >
+    <node pkg="stereo_image_proc" type="stereo_image_proc" name="stereo_image_proc">
+      <param name="stereo_algorithm" value="0"/>
+      <param name="disparity_range" value="64"/>
+      <param name="correlation_window_size" value="15"/>
+      <param name="P1" value="600"/>
+      <param name="P2" value="2400"/>
+
+
+    </node>
+  </group>
+
+    <node pkg="image_view" type="stereo_view" name="stereo_view">
+      <remap from="image"  to="image_rect_color"/>
+    </node>
+
+    <node if="$(arg rqt_reconfigure)" pkg="rqt_reconfigure" type="rqt_reconfigure" name="rqt_reconfigure" args="stereo/stereo_image_proc ocams"/>
+
+</launch>

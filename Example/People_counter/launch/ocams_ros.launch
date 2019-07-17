@@ -1,0 +1,50 @@
+<!-- ... -->
+<launch>
+  <arg name="pi/2" value="1.5707963267948966" />
+  <arg name="optical_rotate" value="0 0.06 0 0 0 0 1" />
+
+  <node pkg="People_counter" type="People_counter" name="People_counter" output="screen">
+    <param name="resolution"    value="2"/> <!-- 0: 1280x960, 1: 1280x720, 2: 640x480, 3: 640x360 4: 320x240-->
+    <param name="frame_rate"    value="30"/>
+    <param name="exposure"      value="100"/>
+    <param name="gain"          value="100"/>
+    <param name="wb_blue"       value="180"/>
+    <param name="wb_red"        value="145"/>
+    <param name="auto_exposure" value="false"/>
+    <param name="show_image"    value="true"/>
+
+<!-- set stereo matching ROI(extract point from left image) -->
+    <param name="ROI_x"          value="280"/>  
+    <param name="ROI_y"          value="130"/>
+    <param name="ROI_width"      value="150"/>
+    <param name="ROI_height"     value="200"/>
+    <param name="ceiling_height" value="2.62"/>
+
+    <param name="detect_upline_x1"      value="0"/>  
+    <param name="detect_upline_y1"      value="10"/>
+    <param name="detect_upline_x2"      value="149"/>
+    <param name="detect_upline_y2"      value="30"/>
+    <param name="detect_downline_x1"    value="0"/>
+    <param name="detect_downline_y1"    value="170"/> 
+    <param name="detect_downline_x2"    value="149"/>
+    <param name="detect_downline_y2"    value="180"/> 
+
+    <!-- imu mode-->
+    <!-- AMGQUA : Accelerometer(+gravity) + Magnetometer + Gyroscope + Quaternion -->
+    <!-- LMGQUA : Linear Acceleration + Magnetometer + Gyroscope + Quaternion -->
+    <param name="imu_mode"      value="AMGEUL" />
+    <param name="port"           value="/dev/ttyACM0" /> <!-- imu port-->
+    <param name="left_frame_id" value="left_frame"/>
+    <param name="right_frame_id" value="right_frame"/>
+  </node>
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="ocams_base_link"
+    args="0 0 0 0 0 0 1 map base_link" />
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="ocams_camera_link1"
+    args="0 0.06 0 -$(arg pi/2) 0 -$(arg pi/2) base_link left_frame" />
+
+  <node pkg="tf2_ros" type="static_transform_publisher" name="ocams_camera_link2"
+    args="0 -0.06 0 -$(arg pi/2) 0 -$(arg pi/2) base_link right_frame" />
+
+</launch>
