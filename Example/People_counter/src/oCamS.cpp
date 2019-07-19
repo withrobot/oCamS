@@ -41,7 +41,7 @@ class StereoCamera
 {
     Withrobot::Camera* camera;
     Withrobot::camera_format camFormat;
-
+ 
 private:
 
     std::string devPath_;

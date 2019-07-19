@@ -1,7 +1,7 @@
 <!-- ... -->
 <launch>
 
-  <include file="$(find ocams_pc)/launch/ocams_ros.launch" />
+  <include file="$(find People_counter)/launch/ocams_ros.launch" />
 
   <node pkg="camera_calibration" type="cameracalibrator.py" name="camera_calibration" output="screen" args="--size 8x6 --square 0.035 --no-service-check true" >
     <remap from="left"   to="stereo/left/image_raw"/>

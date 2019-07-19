@@ -4,7 +4,7 @@
   <!-- Choose algorithm -->
   <arg name="rqt_reconfigure" default="true" />
 
-  <include file="$(find ocams_new)/launch/ocams_ros.launch" />
+  <include file="$(find People_counter)/launch/ocams_ros.launch" />
 
   <group ns="/stereo" >
     <node pkg="stereo_image_proc" type="stereo_image_proc" name="stereo_image_proc">
