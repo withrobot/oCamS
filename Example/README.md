@@ -1,8 +1,8 @@
 # People Counter Example Application Using oCamS-1CGN-U Stereo Camera
 
 ## Introduction
-This example is to show how to implement a simple people counter example using the oCamS-1CGN-U stereo camera with ROS.
-The stereo camera generates depth map and detects significant change of the depth(i.e., distance) within a specific region (ROI).
+This example is to show how to implement a simple people counter example using the oCamS-1CGN-U stereo camera with ROS.</br>
+The stereo camera generates depth map and detects significant change of the depth(i.e., distance) within a specific region (ROI).</br>
 
 ### Step 1. Preparation
 Linux system with ROS installed.
