@@ -9,12 +9,12 @@ Linux system with ROS installed.
 Ref.: http://wiki.ros.org/ROS/Installation
 
 ### Step 2. Install ROS Dependence Package
-Download and install “rqt”, ther ROS visualization package.
+Download and install “rqt”, the ROS visualization package.
 ```
 $ sudo apt-get install ros-[ROS_VERSION]-rqt-*
 ```
 
-Install and the package.
+Install the package.
 ```
 $ svn export https://github.com/withrobot/oCamS/trunk/Example/People_counter
 ```
@@ -28,7 +28,8 @@ Set the path.
 ```
 $ source ~/catkin_ws/devel/setup.bash
 ```
-Run the package.
+Run the package.</br>
+
 For calibration
 ```
 $ roslaunch People_counter calibration.launch
