@@ -10,19 +10,34 @@ Ref.: http://wiki.ros.org/ROS/Installation
 
 ### Step 2. Install ROS Dependence Package
 Download and install “rqt”, ther ROS visualization package.
+```
 $ sudo apt-get install ros-[ROS_VERSION]-rqt-*
+```
+
 Install and the package.
+```
 $ svn export https://github.com/withrobot/oCamS/trunk/Example/People_counter
+```
 Build the package.
+```
 $ cd ~/catkin_ws && catkin_make
+```
 
 ### Step 3. Set and Run Package
 Set the path.
+```
 $ source ~/catkin_ws/devel/setup.bash
+```
 Run the package.
 For calibration
+```
 $ roslaunch People_counter calibration.launch
+```
 To see disparity map
+```
 $ roslaunch People_counter disparity.launch
+```
 To see left and right camera images
+```
 $ roslaunch People_counter ocams_ros.launch
+```
