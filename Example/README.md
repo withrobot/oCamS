@@ -30,15 +30,15 @@ $ source ~/catkin_ws/devel/setup.bash
 ```
 Run the package.</br>
 
-** For calibration
+* For calibration
 ```
 $ roslaunch People_counter calibration.launch
 ```
-** To see disparity map
+* To see disparity map
 ```
 $ roslaunch People_counter disparity.launch
 ```
-** To see left and right camera images
+* To see left and right camera images
 ```
 $ roslaunch People_counter ocams_ros.launch
 ```
