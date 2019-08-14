@@ -37,9 +37,8 @@ Type | Description |
 ## Tutorials and Applications
 * [oCamS-1CGN-U Tutorial - Update Firmware](https://github.com/withrobot/oCamS/blob/master/Software/oCamS_ROS_Package/README.md#update-firmware)
 * [oCamS-1CGN-U Tutorial - ROS & oCam ROS Package installation](https://github.com/withrobot/oCamS/blob/master/Software/oCamS_ROS_Package/README.md#ros--ocam-ros-package-installation)
-* [oCamS-1CGN-U Tutorial - Calibration](https://youtu.be/DPENw80cVmI)
-* [Simultaneous Localization and Mapping(SLAM)](https://youtu.be/czH7wOtqR20)
-* [Obstacle Detection](https://youtu.be/OQj6jvO9MM4)
+* [oCamS-1CGN-U Tutorial - How to Receive IMU data from oCamS Stereo Camera and Change the Data Format on Linux](https://youtu.be/DmM4XxV10UY)
+
 
 
 ## Softwares
