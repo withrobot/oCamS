@@ -14,7 +14,7 @@ if you use openCV version 3.x.x, modify something in Makefile and main.cpp
 #### Step 2. Build Example
 Download an example and build
 ```
-$ cd oCamS_Linux_PrameterControl_Example && make
+$ cd oCamS_Linux_ParameterControl_Example && make
 ```
 Then, will be generate oCamS_Linux_ParameterControl_Example
 
