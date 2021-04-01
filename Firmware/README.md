@@ -1,4 +1,10 @@
 # Release Note
+
+## oCamS-1CGN-U-F
+oCamS-1CGN-U-F-R2011.img : oCamS firmware modified to use oCam Viewer (windows 10 version 2019)</br>
+oCamS-1CGN-U-F-R2103.img : oCamS firmware modified to change whitebalance in oCam Viewer (windows 10 version 2020)
+
+
 ## oCamS-1CGN-U_R1811(Nov. 2018)
 oCam firmware(oCamS-1CGN-U_R1811.img) supports resolutions and frame rates as follows.</br>
 
