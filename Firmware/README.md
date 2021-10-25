@@ -1,5 +1,10 @@
 # Release Note
 
+## oCamS-1CGN-U, oCamS-1MGN-U(Oct. 2011)
+oCam firmware(oCamS-1CGN-U-R2110.img, oCamS-1MGN-U-R2110.img) supports resolutions and frame rates as follows.</br>
+1280(H) x 960(V) pixels 10 for Windows 10 </br>
+
+
 ## oCamS-1CGN-U-F
 oCamS-1CGN-U-F-R2011.img : oCamS firmware modified to use oCam Viewer (windows 10 version 2019)</br>
 oCamS-1CGN-U-F-R2103.img : oCamS firmware modified to change whitebalance in oCam Viewer (windows 10 version 2020)
