@@ -1,8 +1,7 @@
 # Release Note
 
 ## oCamS-1CGN-U, oCamS-1MGN-U(Oct. 2011)
-oCam firmware(oCamS-1CGN-U-R2110.img, oCamS-1MGN-U-R2110.img) supports resolutions and frame rates as follows.</br>
-1280(H) x 960(V) pixels 10 for Windows 10 </br>
+oCamS firmware supports the Brightness and Auto Exposure for Linux
 
 
 ## oCamS-1CGN-U-F
@@ -11,7 +10,7 @@ oCamS-1CGN-U-F-R2103.img : oCamS firmware modified to change whitebalance in oCa
 
 
 ## oCamS-1CGN-U_R1811(Nov. 2018)
-oCam firmware(oCamS-1CGN-U_R1811.img) supports resolutions and frame rates as follows.</br>
+oCamS firmware(oCamS-1CGN-U_R1811.img) supports resolutions and frame rates as follows.</br>
 
 ### USB 3.0
 **Bayer GRBG format**</br>
