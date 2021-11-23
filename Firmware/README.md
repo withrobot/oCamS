@@ -1,7 +1,10 @@
 # Release Note
 
-## oCamS-1CGN-U, oCamS-1MGN-U(Oct. 2011)
+## oCamS-1CGN-U, oCamS-1MGN-U(Oct. 2021)
 oCamS firmware supports the Brightness and Auto Exposure for Linux
+
+## oCamS-1CGN-U_R2101(Jan. 2021)
+Bug fixed - Windows 10 release 2020 version. (white balance fix) / Windows 10 release version : 19041
 
 
 ## oCamS-1CGN-U-F
