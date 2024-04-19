@@ -40,10 +40,10 @@ http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment
   $ sudo apt-get install libv4l-dev libudev-dev ros-kinetic-rtabmap*
   ```
   ##### 2.2 Download source tree from github
-  * using SVN checkout
+  * using git clone
   ```
-  $ cd YOUR_WORKING_DIRECTORY (ex. $ cd ~/catkin_ws/src/)
-  $ svn export https://github.com/withrobot/oCamS/trunk/Software/oCamS_ROS_Package/ocams_1cgn
+  $ git clone https://github.com/withrobot/oCamS.git YOUR_LOCAL_PATH
+  $ cp -r YOUR_LOCAL_PATH/Software/oCamS_ROS_Package/ocams_1cgn YOUR_WORKING_DIRECTORY (ex. $ cp -r ~/oCamS/Software/oCamS_ROS_Package/ocams_1cgn ~/catkin_ws/src/)
   ```
   ##### 2.3 Build
   ```
