@@ -59,7 +59,7 @@ So, user needs to write following rules into udev rule file like below.
 $ sudo vi /etc/udev/rules.d/99-ttyacms.rules
 ATTRS{idVendor}=="04b4" ATTRS{idProduct}=="00f9", MODE="0666", ENV{ID_MM_DEVICE_IGNORE}="1"
 ATTRS{idVendor}=="04b4" ATTRS{idProduct}=="00f8", MODE="0666", ENV{ID_MM_DEVICE_IGNORE}="1"
-$ sudo udevadm control –reload-rules
+$ sudo udevadm control --reload-rules
 ```
 And, run...
 ```
